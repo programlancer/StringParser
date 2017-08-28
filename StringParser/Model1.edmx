@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StringParserModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="StringParserModelStoreContainer">
+          <EntitySet Name="Schemas" EntityType="StringParserModel.Store.Schemas" store:Type="Tables" />
+          <EntitySet Name="SchemasFields" EntityType="StringParserModel.Store.SchemasFields" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Schemas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SchemasFields">
+          <Key>
+            <PropertyRef Name="Schema" />
+            <PropertyRef Name="Start" />
+          </Key>
+          <Property Name="Schema" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Start" Type="int" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Vaules" Type="nvarchar" MaxLength="200" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StringParserModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="StringParserEntitiesSchemas" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Schemas" EntityType="StringParserModel.Schema" />
+          <EntitySet Name="SchemasFields" EntityType="StringParserModel.SchemaFields" />
+        </EntityContainer>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SchemaFields">
+          <Key>
+            <PropertyRef Name="Schema" />
+            <PropertyRef Name="Start" />
+          </Key>
+          <Property Type="Int32" Name="Schema" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Start" Nullable="false" />
+          <Property Type="Int32" Name="Length" Nullable="false" />
+          <Property Type="String" Name="Type" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Vaules" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StringParserModelStoreContainer" CdmEntityContainer="StringParserEntitiesSchemas">
+          <EntitySetMapping Name="Schemas">
+            <EntityTypeMapping TypeName="StringParserModel.Schema">
+              <MappingFragment StoreEntitySet="Schemas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchemasFields">
+            <EntityTypeMapping TypeName="StringParserModel.SchemaFields">
+              <MappingFragment StoreEntitySet="SchemasFields">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Vaules" ColumnName="Vaules" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Schema" ColumnName="Schema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="StringParserModel.Schema" Width="1.5" PointX="0.5" PointY="0.5" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="StringParserModel.SchemaFields" Width="2.25" PointX="2.625" PointY="0.5" Height="1.5923063151041665" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

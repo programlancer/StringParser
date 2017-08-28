@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StringParserModelStoreContainer" CdmEntityContainer="StringParserEntitiesSchemas">
+    <EntitySetMapping Name="Schemas">
+      <EntityTypeMapping TypeName="StringParserModel.Schema">
+        <MappingFragment StoreEntitySet="Schemas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchemasFields">
+      <EntityTypeMapping TypeName="StringParserModel.SchemaFields">
+        <MappingFragment StoreEntitySet="SchemasFields">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Vaules" ColumnName="Vaules" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Schema" ColumnName="Schema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
